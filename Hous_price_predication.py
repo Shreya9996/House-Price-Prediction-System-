@@ -67,3 +67,4 @@ Distance_from_City_km = 25
 result = predict_price(Area_sqft,Bedrooms,Bathrooms,Floors,Parking,Age_of_House,Distance_from_City_km)
 print(result)
 
+
