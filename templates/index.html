@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+</head>
+<body>
+
+<h2>House Price Prediction System</h2>
+
+<form action="/predict" method="post">
+    <input type="text" name="area" placeholder="Area (sq ft)" required><br><br>
+    <input type="text" name="bedrooms" placeholder="Bedrooms" required><br><br>
+    <input type="text" name="bathrooms" placeholder="Bathrooms" required><br><br>
+
+    <button type="submit">Predict</button>
+</form>
+
+<h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
