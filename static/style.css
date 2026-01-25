@@ -1,4 +1,108 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-    text-align: center;
-    font-family: Arial;
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.55)
+    ),
+    url("https://images.unsplash.com/photo-1568605114967-8130f3a36994");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main card */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 40px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+h1 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Result */
+.result {
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #27ae60;
+    background: #ecf9f1;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
 }
