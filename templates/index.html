@@ -1,35 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>House Price Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<h2>House Price Prediction System</h2>
+<!-- Dark / Light Toggle -->
+<div class="theme-toggle">
+    <button id="toggleTheme">🌙</button>
+</div>
 
-<form action="/predict" method="post">
+<div class="container">
+    <h1>House Price Prediction System</h1>
 
-    <input type="number" step="any" name="Area_sqft" placeholder="Area (sq ft)" required><br><br>
+    <form action="/predict" method="post">
 
-    <input type="number" name="Bedrooms" placeholder="Bedrooms" required><br><br>
+        <input type="number" step="any" name="Area_sqft" placeholder="Area (sq ft)" required>
+        <input type="number" name="Bedrooms" placeholder="Bedrooms" required>
+        <input type="number" name="Bathrooms" placeholder="Bathrooms" required>
+        <input type="number" name="Floors" placeholder="Floors" required>
+        <input type="number" name="Parking" placeholder="Parking" required>
+        <input type="number" name="Age_of_House" placeholder="Age of House (years)" required>
+        <input type="number" step="any" name="Distance_from_City_km" placeholder="Distance from City (km)" required>
 
-    <input type="number" name="Bathrooms" placeholder="Bathrooms" required><br><br>
+        <button type="submit" class="btn-animate">Predict Price</button>
+    </form>
 
-    <input type="number" name="Floors" placeholder="Floors" required><br><br>
+    {% if prediction_text %}
+    <div class="result">
+        🏡 Estimated Price: ₹ <span id="price">{{ prediction_text }}</span>
+    </div>
+    {% endif %}
+</div>
 
-    <input type="number" name="Parking" placeholder="Parking" required><br><br>
+<!-- JS -->
+<script>
+/* 🌙 Dark / Light Toggle */
+const toggleBtn = document.getElementById("toggleTheme");
+toggleBtn.onclick = () => {
+    document.body.classList.toggle("dark");
+    toggleBtn.textContent = 
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+};
 
-    <input type="number" name="Age_of_House" placeholder="Age of House (years)" required><br><br>
+/* 💰 Price Count Animation */
+const priceEl = document.getElementById("price");
+if (priceEl) {
+    let target = parseFloat(priceEl.innerText.replace(/[^0-9.]/g, ""));
+    let count = 0;
+    let step = target / 60;
 
-    <input type="number" step="any" name="Distance_from_City_km" placeholder="Distance from City (km)" required><br><br>
-
-    <button type="submit">Predict Price</button>
-</form>
-
-<h3>{{ prediction_text }}</h3>
+    let interval = setInterval(() => {
+        count += step;
+        if (count >= target) {
+            priceEl.innerText = target.toFixed(2);
+            clearInterval(interval);
+        } else {
+            priceEl.innerText = Math.floor(count);
+        }
+    }, 20);
+}
+</script>
 
 </body>
 </html>
-
