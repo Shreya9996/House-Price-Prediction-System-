@@ -44,12 +44,19 @@ Render
 # 📂 Project Structure
 
 House_Price_Prediction/
-│── static/                    # CSS, JS, images
-│── templates/                # HTML files
-│── app.py                    # Flask backend
+
+│── static/   
+
+│── templates/  
+
+│── app.py 
+
 │── house_price_prediction_550_rows.csv
+
 │── requirements.txt
+
 └── README.md
+
 
 
 # ⚙️ How It Works
@@ -64,8 +71,6 @@ Python 3.x
 
 pip
 # 📥 Installation
-Clone the repository:
-git clone https://github.com/yourusername/House-Price-Prediction.git
 cd House-Price-Prediction
 Install dependencies:
 pip install -r requirements.txt
@@ -78,6 +83,7 @@ python app.py
 house_price_prediction_550_rows.csv
 
 Contains property features and corresponding prices
+
 # 📈 Future Enhancements
 Add more advanced ML models
 Improve prediction accuracy
