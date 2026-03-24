@@ -96,3 +96,16 @@ This project is licensed under the MIT License.
 
 
 Live URL: [Click Here] : https://house-price-prediction-system-sz5g.onrender.com/
+
+
+
+📬 Contact & Support
+
+For queries, feature requests, or issues, reach out at:
+
+📧 Email: shreyapatil9681@gmail.com
+
+🔥 Star this repo if you find it useful! 🚀
+
+
+
